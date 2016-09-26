@@ -4,6 +4,8 @@
 #include "movement.h"
 
 int main(int argc, char *argv[]) {
+    int c;
+
     coordinates coords = {
         .x = 0,
         .y = 0,
@@ -13,23 +15,12 @@ int main(int argc, char *argv[]) {
         .next_y = 0
     };
 
-    int c;
 
-    initscr();
-    cbreak();
-    noecho();
-    curs_set(FALSE);
-    keypad(stdscr, TRUE);
-    getmaxyx(stdscr, coords.max_y, coords.max_x);
-
-    coords.y = coords.max_y / 2;
-    coords.x = coords.max_x / 2;
-    coords.next_x = coords.x;
-    coords.next_y = coords.y;
+    init_position(&coords);
 
     while(1) {
         clear();
-        init_position(&coords);
+        movement_refresh(&coords);
         c = getch();
         move_one(c, &coords);
     }

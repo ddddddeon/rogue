@@ -4,6 +4,20 @@
 #include "movement.h"
 
 void init_position(coordinates *coords) {
+    initscr();
+    cbreak();
+    noecho();
+    curs_set(FALSE);
+    keypad(stdscr, TRUE);
+    getmaxyx(stdscr, coords->max_y, coords->max_x);
+
+    coords->y = coords->max_y / 2;
+    coords->x = coords->max_x / 2;
+    coords->next_x = coords->x;
+    coords->next_y = coords->y;
+}
+
+void movement_refresh(coordinates *coords) {
     mvprintw(coords->y, coords->x, "@");
     mvprintw(0, 0, "x: %d", coords->x);
     mvprintw(1, 0, "y: %d", coords->y);

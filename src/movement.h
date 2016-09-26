@@ -13,4 +13,5 @@ typedef struct {
 } coordinates;
 
 void init_position(coordinates *coords);
+void movement_refresh(coordinates *coords);
 void move_one(int c, coordinates *coords);
