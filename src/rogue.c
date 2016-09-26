@@ -1,7 +1,7 @@
 #include <ncurses.h>
 #include <unistd.h>
 
-#include "movement.h"
+#include "position.h"
 
 int main(int argc, char *argv[]) {
     int c;
@@ -19,10 +19,9 @@ int main(int argc, char *argv[]) {
     init_position(&coords);
 
     while(1) {
-        clear();
-        movement_refresh(&coords);
+        draw_position(&coords);
         c = getch();
-        move_one(c, &coords);
+        move_position(c, &coords);
     }
 
     endwin();

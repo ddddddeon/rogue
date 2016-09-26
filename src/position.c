@@ -1,7 +1,7 @@
 #include <ncurses.h>
 #include <unistd.h>
 
-#include "movement.h"
+#include "position.h"
 
 void init_position(coordinates *coords) {
     initscr();
@@ -17,18 +17,19 @@ void init_position(coordinates *coords) {
     coords->next_y = coords->y;
 }
 
-void movement_refresh(coordinates *coords) {
+void draw_position(coordinates *coords) {
+    clear();
+
     mvprintw(coords->y, coords->x, "@");
+
     mvprintw(0, 0, "x: %d", coords->x);
     mvprintw(1, 0, "y: %d", coords->y);
 
     refresh();
-    
     usleep(DELAY);
 }
 
-void move_one(int c, coordinates *coords) {
-    
+void move_position(int c, coordinates *coords) {
     if (c == KEY_RIGHT) { 
         coords->next_x = coords->x + 1;
     } else if (c == KEY_DOWN) { 
