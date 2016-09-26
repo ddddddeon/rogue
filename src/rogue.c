@@ -5,7 +5,6 @@
 
 int main(int argc, char *argv[]) {
     int c;
-
     coordinates coords = {
         .x = 0,
         .y = 0,
@@ -14,7 +13,6 @@ int main(int argc, char *argv[]) {
         .next_x = 0,
         .next_y = 0
     };
-
 
     init_position(&coords);
 
