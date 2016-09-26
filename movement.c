@@ -5,8 +5,8 @@
 
 void init_position(coordinates *coords) {
     mvprintw(coords->y, coords->x, "@");
-    mvprintw(0, 0, "next_x: %d", coords->next_x);
-    mvprintw(1, 0, "next_y: %d", coords->next_y);
+    mvprintw(0, 0, "x: %d", coords->x);
+    mvprintw(1, 0, "y: %d", coords->y);
 
     refresh();
     
@@ -25,11 +25,11 @@ void move_one(int c, coordinates *coords) {
         coords->next_y = coords->y - 1;
     }
         
-    if (coords->next_x >= coords->max_x || coords->next_x < 0 ||
-        coords->next_y >= coords->max_y || coords->next_y < 0) {
-        beep();
-    } else {
+    if (!(coords->next_x >= coords->max_x || coords->next_x < 0)) {
         coords->x = coords->next_x;
+    }
+    
+    if (!(coords->next_y >= coords->max_y || coords->next_y < 0)) {
         coords->y = coords->next_y;
     }
 }
