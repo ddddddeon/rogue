@@ -22,8 +22,10 @@ void draw_position(coordinates *coords) {
 
     mvprintw(coords->y, coords->x, "@");
 
+#ifdef DEBUG
     mvprintw(0, 0, "x: %d", coords->x);
     mvprintw(1, 0, "y: %d", coords->y);
+#endif
 
     refresh();
     usleep(DELAY);
