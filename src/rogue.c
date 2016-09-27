@@ -11,7 +11,9 @@ int main(int argc, char *argv[]) {
         .max_x = 0,
         .max_y = 0,
         .next_x = 0,
-        .next_y = 0
+        .next_y = 0,
+        .prev_x = 0,
+        .prev_y = 0
     };
 
     init_position(&coords);

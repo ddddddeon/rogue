@@ -15,10 +15,12 @@ void init_position(coordinates *coords) {
     coords->x = coords->max_x / 2;
     coords->next_x = coords->x;
     coords->next_y = coords->y;
+    coords->prev_x = coords->x;
+    coords->prev_y = coords->y;
 }
 
 void draw_position(coordinates *coords) {
-    clear();
+    mvdelch(coords->prev_y, coords->prev_x);
 
     mvprintw(coords->y, coords->x, "@");
 
@@ -43,10 +45,12 @@ void move_position(int c, coordinates *coords) {
     }
         
     if (!(coords->next_x >= coords->max_x || coords->next_x < 0)) {
+        coords->prev_x = coords->x;
         coords->x = coords->next_x;
     }
     
     if (!(coords->next_y >= coords->max_y || coords->next_y < 0)) {
+        coords->prev_y = coords->y;
         coords->y = coords->next_y;
     }
 }

@@ -10,6 +10,8 @@ typedef struct {
     int max_x;
     int next_x;
     int next_y;
+    int prev_x;
+    int prev_y;
 } coordinates;
 
 void init_position(coordinates *coords);
