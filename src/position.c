@@ -20,7 +20,8 @@ void init_position(coordinates *coords) {
 }
 
 void draw_position(coordinates *coords) {
-    mvdelch(coords->prev_y, coords->prev_x);
+    //    mvdelch(coords->prev_y, coords->prev_x);
+    mvprintw(coords->prev_y, coords->prev_x, coords->saved_char);
 
     mvprintw(coords->y, coords->x, "@");
 

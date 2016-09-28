@@ -1,6 +1,6 @@
 NAME=rogue
 LIBS=-lncurses
-CFLAGS=-Wall $(LIBS) -DDEBUG
+CFLAGS=-std=gnu99 -Werror $(LIBS) -DDEBUG
 
 CC=gcc
 OUTFILE=bin/$(NAME)

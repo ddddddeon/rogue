@@ -2,6 +2,7 @@
 #include <unistd.h>
 
 #include "position.h"
+#include "map.h"
 
 int main(int argc, char *argv[]) {
     int c;
@@ -13,11 +14,13 @@ int main(int argc, char *argv[]) {
         .next_x = 0,
         .next_y = 0,
         .prev_x = 0,
-        .prev_y = 0
+        .prev_y = 0,
+        .saved_char = "."
     };
 
     init_position(&coords);
-
+    draw_dungeon();
+    
     while(1) {
         draw_position(&coords);
         c = getch();
