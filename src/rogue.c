@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
     };
 
     init_position(&coords);
-    draw_dungeon();
+    draw_dungeon(coords);
     
     while(1) {
         draw_position(&coords);

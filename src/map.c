@@ -1,5 +1,7 @@
 #include <ncurses.h>
 
+#include "map.h"
+
 void draw_rectangle(int height, int width, int start_y, int start_x) {
     int x;
     int y;
@@ -17,6 +19,6 @@ void draw_rectangle(int height, int width, int start_y, int start_x) {
 }
 
 
-void draw_dungeon() {
-    draw_rectangle(10, 14, 10, 10);
+void draw_dungeon(coordinates coords) {
+    draw_rectangle(10, 20, (coords.max_y / 2) - 5, (coords.max_x / 2) - 10);
 }
