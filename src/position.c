@@ -1,6 +1,3 @@
-#include <ncurses.h>
-#include <unistd.h>
-
 #include "position.h"
 
 void init_position(coordinates *coords) {

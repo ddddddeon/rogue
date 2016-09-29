@@ -1,6 +1,3 @@
-#include <ncurses.h>
-#include <unistd.h>
-
 #include "position.h"
 #include "map.h"
 
