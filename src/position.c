@@ -47,18 +47,12 @@ void move_position(int c, coordinates *coords) {
         coords->next_x = coords->x;
         coords->next_y = coords->y;
     } else {
-        
-        if (!(coords->next_x >= coords->max_x ||
-              coords->next_x < 0)) {
-            
-            
+        if (!(coords->next_x >= coords->max_x || coords->next_x < 0)) {
             coords->prev_x = coords->x;
             coords->x = coords->next_x;
         }
     
-        if (!(coords->next_y >= coords->max_y ||
-              coords->next_y < 0)) {
-
+        if (!(coords->next_y >= coords->max_y || coords->next_y < 0)) {
             coords->prev_y = coords->y;
             coords->y = coords->next_y;
         }

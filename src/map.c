@@ -15,7 +15,6 @@ void draw_rectangle(int height, int width, int start_y, int start_x) {
         mvprintw(start_y, x, "#");
         mvprintw(start_y + height, x, "#");
     }
- 
 }
 
 
